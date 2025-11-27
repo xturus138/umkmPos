@@ -1,14 +1,362 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.RiwayatFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/blue"
+        android:padding="16dp">
 
-</FrameLayout>
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitleTransaksi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Riwayat Transaksi"
+            android:textSize="24dp"
+            android:textColor="@color/white"
+            android:lineHeight="32dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvDescTransaksi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Kelola dan pantau semua transaksi anda"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleTransaksi"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="8dp"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/btnExport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/bg_export_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/tvDescTransaksi"
+            app:layout_constraintTop_toTopOf="@id/tvTitleTransaksi">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_download_icon"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="5dp"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Export"
+                    android:layout_weight="1"
+                    android:textColor="@color/white"/>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="2"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tvDescTransaksi"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="15dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgStackUp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_arrow_stack_icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Transaksi"
+                        android:textColor="@color/blue"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/imgStackUp"
+                        app:layout_constraintBottom_toBottomOf="@id/imgStackUp"
+                        app:layout_constraintTop_toTopOf="@id/imgStackUp"
+                        android:layout_marginStart="8dp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalTransaksi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="25"
+                        android:layout_marginTop="4dp"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/imgStackUp"
+                        app:layout_constraintStart_toStartOf="@id/imgStackUp"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="+14 today"
+                        android:textSize="12sp"
+                        android:textColor="@color/green"
+                        app:layout_constraintStart_toStartOf="@id/tvTotalTransaksi"
+                        app:layout_constraintEnd_toEndOf="@id/tvTotalTransaksi"
+                        app:layout_constraintTop_toBottomOf="@id/tvTotalTransaksi"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="0dp"
+                android:layout_height="110dp"
+                android:layout_weight="1">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="15dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/imgWallet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_wallet_icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Total Pendapatan"
+                        android:textColor="@color/blue"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toEndOf="@id/imgWallet"
+                        app:layout_constraintBottom_toBottomOf="@id/imgWallet"
+                        app:layout_constraintTop_toTopOf="@id/imgWallet"
+                        android:layout_marginStart="8dp"/>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvTotalPendapatan"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Rp250.000"
+                        android:layout_marginTop="4dp"
+                        android:textSize="20dp"
+                        android:textColor="@color/black"
+                        app:layout_constraintTop_toBottomOf="@id/imgWallet"
+                        app:layout_constraintStart_toStartOf="@id/imgWallet"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="+Rp30.000 today"
+                        android:textSize="12sp"
+                        android:textColor="@color/green"
+                        app:layout_constraintStart_toStartOf="@id/tvTotalPendapatan"
+                        app:layout_constraintEnd_toEndOf="@id/tvTotalPendapatan"
+                        app:layout_constraintTop_toBottomOf="@id/tvTotalPendapatan"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+        
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:cardCornerRadius="16dp"
+            android:elevation="8dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="20dp"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:paddingBottom="20dp">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/searchBarLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/whiteLight"
+                    android:elevation="0dp"
+                    android:gravity="center"
+                    app:boxStrokeWidth="0.8dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:boxStrokeColor="@color/grayBlack">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/tiSearchBarRiwayat"
+                        android:layout_width="match_parent"
+                        android:layout_height="47dp"
+                        android:hint="Cari invoice, customer, atau item..."
+                        android:paddingStart="10dp"
+                        android:drawableStart="@drawable/ic_search_icon"
+                        android:textColorHint="@color/black"
+                        android:textColor="@color/black"
+                        android:textSize="16dp"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <LinearLayout
+                    android:id="@+id/containerFilter"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/searchBarLayout">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/whiteLight"
+                        android:layout_weight="1"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="45dp"
+                        android:backgroundTint="@color/whiteLight"
+                        android:layout_weight="1"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="4"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/containerFilter">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/whiteLight"
+                        android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Semua"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/whiteLight"
+                        android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Hari ini"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/whiteLight"
+                        android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Minggu ini"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="0dp"
+                        android:layout_height="31dp"
+                        android:layout_marginEnd="8dp"
+                        android:backgroundTint="@color/whiteLight"
+                        android:layout_weight="1">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="Bulan"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+                </LinearLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </com.google.android.material.card.MaterialCardView>
+        
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</LinearLayout>
