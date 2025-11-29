@@ -5,7 +5,11 @@
     <color name="whiteLight">#F9FAFB</color>
 
     <color name="green">#2AAA8A</color>
+    <color name="greenLeaves">#00A63E</color>
+    <color name="greenLight">#f0fdf4</color>
     <color name="blue">#2B7FFF</color>
+    <color name="blueLight">#EFF6FF</color>
     <color name="grayBlack">#6A7282</color>
     <color name="grayLight">#99A1AF</color>
+    <color name="grayText">#6A7282</color>
 </resources>
